@@ -6,7 +6,7 @@ import styles from './header.module.css'
 const Header = () => {
 
     const user = null
-    const links = getNavigation(1)
+    const links = getNavigation(user)
     return (
         <header className={styles.header}>
 
@@ -26,5 +26,4 @@ const Header = () => {
         </header>
     )
 }
-
 export default Header

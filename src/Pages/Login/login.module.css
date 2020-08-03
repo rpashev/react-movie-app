@@ -1,0 +1,25 @@
+.login {
+    width: 83%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.formcontrol {
+    width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    text-align: center;
+    border: none;
+}
+
+.input {
+    margin: 0.5rem 0;
+    width: 180px;
+    padding: 4px;
+    border: 2px solid #a2da3c
+}
+.label {
+    float: left;
+    width: 30%;
+    text-align: right;
+  }
