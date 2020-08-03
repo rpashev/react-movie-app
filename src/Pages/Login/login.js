@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Layout from "../../Components/Layout/Layout"
 import { useHistory } from "react-router-dom"
 import styles from './login.module.css'
+import firebase from "firebase/app";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -10,10 +11,17 @@ const Login = () => {
 
     let history = useHistory();
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        const data = { email, password }
-        console.log(data)
+        try {
+            await firebase
+              .auth()
+              .signInWithEmailAndPassword(email, password);
+    
+            history.push("/");
+          } catch (err) {
+            alert(err);
+          }
     }
     return (
         <Layout>

@@ -12,6 +12,7 @@ import Watchlist from './Pages/Watchlist/watchlist'
 import Seenlist from './Pages/Seenlist/seenlist'
 import NotFoundPage from './Pages/NotFound/notfound'
 import HomeGuest from './Pages/HomeGuest/home-guest'
+import Logout from './Components/Logout/logout'
 
 // user ? Search : HomeGuest
 
@@ -22,6 +23,7 @@ const Navigation = () => {
                 <Route path="/" exact component={HomeGuest} /> 
                 <Route path="/search" exact component={Search} />
                 <Route path="/login" exact component={Login} />
+                <Route path="/logout" exact component={Logout} />
                 <Route path="/register" exact component={Register} />
                 <Route path="/details" exact component={Details} />
                 <Route path="/watchlist" exact component={Watchlist} />
