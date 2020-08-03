@@ -34,9 +34,9 @@ const getNavigation = (user) => {
       link: "/login"
     }
   ]
-  //const loggedIn = user && user.loggedIn
-  //return loggedIn ? userLinks : guestLinks
+  
   return user ? userLinks : guestLinks
+  
 }
 
 export default getNavigation

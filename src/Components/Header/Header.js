@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import userContext from '../../Context/user-context'
 import getNavigation from '../../utils/navigation-links'
 import { Link } from 'react-router-dom'
 import styles from './header.module.css'
 
-const Header = () => {
 
-    const user = null
+const Header = () => {
+    const context = useContext(userContext)
+    //const userId = context.user.uid
+    let {user} = context;
     const links = getNavigation(user)
-    return (
+
+        return (
         <header className={styles.header}>
 
             {
