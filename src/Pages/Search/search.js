@@ -27,10 +27,10 @@ const Search = () => {
     const renderMovies = () => {
         if (filteredMovies) {
             return filteredMovies.map(movie => {
-                return <MovieCard key={movie.imdbID} title={movie.Title} img={movie.Poster} />
+                return <MovieCard key={movie.imdbID} title={movie.Title} img={movie.Poster} movieID={movie.imdbID} />
             })
         } else {
-            return 0
+            return 
         }
 
     }
@@ -45,12 +45,9 @@ const Search = () => {
             <div className={styles.list}>
                 {renderMovies()}
             </div>
-
         </Layout >
 
     )
-
-
 }
 
 export default Search

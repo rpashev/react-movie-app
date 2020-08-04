@@ -1,0 +1,8 @@
+.details {
+    display: flex;
+    flex-wrap: no-wrap;
+    
+}
+.side {
+    margin: 100px;
+}

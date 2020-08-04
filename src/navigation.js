@@ -41,7 +41,7 @@ const Navigation = () => {
                     {!user ? <Register /> : <Redirect to='/' />}
                 </Route>
 
-                <Route path="/details" exact>
+                <Route path="/details/:movieID" exact>
                     {user ? <Details /> : <Redirect to='/' />}
                 </Route>
 
