@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import firebase from "firebase/app";
+
 export const useAuth = () => {
     const [state, setState] = useState(() => {
         const user = firebase.auth().currentUser

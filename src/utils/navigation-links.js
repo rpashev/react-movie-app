@@ -3,7 +3,7 @@ const getNavigation = (user) => {
   const userLinks = [
     {
       title: "Home",
-      link: '/search'
+      link: '/'
     },
     {
       title: "Watchlist",
@@ -11,7 +11,7 @@ const getNavigation = (user) => {
     },
     {
       title: "Already watched",
-      link: "/"
+      link: "/seenlist"
     },
 
     {
