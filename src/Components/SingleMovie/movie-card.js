@@ -8,6 +8,7 @@ const MovieCard = (props) => {
             <Link to={`/details/${props.movieID}`}> <img alt="pic" className={styles.image} src={props.img} ></img></Link>
 
             <div>{props.title}</div>
+
         </div>
     )
 
