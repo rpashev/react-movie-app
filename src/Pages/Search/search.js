@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react"
 import Layout from "../../Components/Layout/Layout"
 import MovieCard from "../../Components/SingleMovie/movie-card"
 import styles from './search.module.css'
-// import axios from 'axios'
 import { getFilteredMovies } from '../../utils/omdb-requests'
 
 const Search = () => {
