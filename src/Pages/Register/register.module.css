@@ -1,25 +1,30 @@
 .register {
-    width: 83%;
-    display: inline-block;
-    vertical-align: top;
+    width: 400px;
+    display: flex;
+    flex-flow: column;
+    margin: 0 auto;
+    margin-top: 100px;
+    justify-content: center;
 }
 
 .formcontrol {
-    width: 30%;
+    width: 100%;
     margin: 0 auto;
     padding: 1%;
-    text-align: center;
     border: none;
 }
 
 .input {
+    display: block;
     margin: 0.5rem 0;
-    width: 180px;
+    width: 50%;
     padding: 4px;
     border: 2px solid #a2da3c
 }
+
 .label {
-    float: left;
-    width: 30%;
-    text-align: right;
-  }
+    width: auto;
+    display: block;
+    width: 50%;
+    text-align: left;
+}
