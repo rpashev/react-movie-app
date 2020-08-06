@@ -4,7 +4,7 @@ import { getUserLists } from '../../utils/firebase-requests'
 import userContext from "../../Context/user-context"
 import MovieCard from "../../Components/SingleMovie/movie-card"
 import Loader from "../../Components/Loader/loader"
-
+import styles from './watchlist.module.css'
 
 const Watchlist = () => {
     const context = useContext(userContext)
@@ -44,7 +44,7 @@ const Watchlist = () => {
 
     return (
         <Layout>
-            <div>
+            <div className={styles.list}>
                 {renderMovies()}
             </div>
         </Layout>

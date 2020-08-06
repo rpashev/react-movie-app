@@ -1,6 +1,7 @@
 .details {
     display: flex;
     flex-wrap: no-wrap;
+    color: #ffffff
     
 }
 .side {

@@ -18,10 +18,10 @@ const Search = () => {
 
     useEffect(() => {
         let isSubscribed = true
-        
+
         if (isSubscribed) {
             setMovies()
-            
+
         }
         return () => {
             isSubscribed = false
@@ -30,28 +30,34 @@ const Search = () => {
 
 
     const renderMovies = () => {
-        if(isLoading === true && query !== ''){
+        if (isLoading === true && query !== '') {
             return <Loader />
+        }
+        if(isLoading === false && query ===''){
+            return <img className={styles.img} src="./home.png" alt="img" />
         }
         if (filteredMovies) {
             return filteredMovies.map(movie => {
                 return <MovieCard key={movie.imdbID} title={movie.Title} img={movie.Poster} movieID={movie.imdbID} />
             })
-        } 
+        }
 
     }
     return (
         <Layout>
-            <h1>Search</h1>
+        <div className={styles.container}>
+        <h1 className={styles.title}>Search for a movie or TV series here...</h1>
             <div>
-                <input onChange={e => setQuery(e.target.value)}></input>
+                <input className={styles.query} onChange={e => setQuery(e.target.value)}></input>
 
             </div>
 
             <div className={styles.list}>
                 {renderMovies()}
-                
+
             </div>
+        </div>
+            
         </Layout >
 
     )

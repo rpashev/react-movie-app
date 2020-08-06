@@ -1,10 +1,13 @@
 import React from 'react'
 import Layout from '../../Components/Layout/Layout'
+import styles from './notfound.module.css'
 
 const NotFound = () => {
     return (
         <Layout>
-            <h1>NOT FOUND</h1>
+            <div className={styles.notfound}>
+                <img alt="pic" src="./notfound.png"></img>
+            </div>
         </Layout>
 
     )

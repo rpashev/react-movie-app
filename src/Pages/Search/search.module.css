@@ -1,5 +1,28 @@
+.container {
+    margin-top: 4rem;
+    text-align: center;
+    
+}
 .list{
     display: flex;
     flex-wrap: wrap;
-    margin: 4 rem;
+    margin: 2rem;
+    margin-left: 6rem;
+    
+    
+}
+.title {
+    color: #ffffff;
+}
+.query {
+    text-align: left;
+    width: 800px;
+    padding: 8px;
+    font-size: 1.3rem;
+}
+.img {
+    margin: 0 auto;
+    width: 620px;
+    height: 500px;
+    
 }

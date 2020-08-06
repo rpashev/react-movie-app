@@ -8,9 +8,9 @@ const HomeGuest = () => {
             <div className={styles.homeguest}>
                 <h1>Welcome!</h1>
                 <div>
-                    <Link to='/register'><h3>SIGN UP to begin</h3></Link>
+                    <Link className={styles.link} to='/register'><h3>SIGN UP to begin</h3></Link>
                     <p>Already have an account? </p>
-                    <Link to='/login'><h3>SIGN IN here</h3></Link>
+                    <Link className={styles.link} to='/login'><h3>SIGN IN here</h3></Link>
                 </div>
             </div>
 

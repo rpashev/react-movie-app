@@ -3,3 +3,11 @@
     margin-right: 8rem;
     margin-top: 6rem;
 }
+.link {
+    text-decoration: none;
+    color: #1ac70a;
+    font-size: 2rem;
+}
+.link:hover {
+    color: #45e237;
+}
