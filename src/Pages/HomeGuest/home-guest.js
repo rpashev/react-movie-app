@@ -8,7 +8,7 @@ const HomeGuest = () => {
             <h1>Welcome!</h1>
             <div>
                 <Link to='/register'><h3>SIGN UP to begin</h3></Link>
-                <p>Already have an accout? </p>
+                <p>Already have an account? </p>
                 <Link to='/login'><h3>SIGN IN here</h3></Link>
             </div>
         </Layout>

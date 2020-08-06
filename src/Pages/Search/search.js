@@ -30,7 +30,7 @@ const Search = () => {
 
 
     const renderMovies = () => {
-        if(isLoading === true){
+        if(isLoading === true && query !== ''){
             return <Loader />
         }
         if (filteredMovies) {
