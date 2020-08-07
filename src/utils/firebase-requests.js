@@ -9,7 +9,7 @@ export const addToList = async (data, userID, listname) => {
             .update({
                 [listname]: firebase.firestore.FieldValue.arrayUnion(data)
             });
-
+        
     } catch (err) {
         alert(err);
     }
@@ -39,8 +39,9 @@ export const removeFromList = async (userID, listname, movieID) => {
             .collection("userData")
             .doc(userID)
             .update({
-              [listname]: currentList
+                [listname]: currentList
             });
+        
     } catch (err) {
         alert(err)
     }

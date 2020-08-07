@@ -5,8 +5,7 @@ import { getSingleMovie } from '../../utils/omdb-requests'
 import { useParams } from "react-router-dom"
 import userContext from "../../Context/user-context"
 import { addToList, removeFromList } from '../../utils/firebase-requests'
-import { useCheckMovie } from '../../CustomHooks/useCheckMovie'
-
+import { checkMovie } from '../../utils/checkLists'
 
 const Details = () => {
     const [movie, setMovie] = useState({})
@@ -15,17 +14,28 @@ const Details = () => {
     const context = useContext(userContext)
     const { user } = context
     const userID = user.uid
+    const [isInWatchlist, setIsInWatchlist] = useState()
+    const [isInSeenlist, setIsInSeenlist] = useState()
+
+    const setFlags = async () => {
+        let flags = await checkMovie(movieID, userID)
+        setIsInWatchlist(flags.isInWatchList)
+        setIsInSeenlist(flags.isInSeenlist)
+    }
+
+    useEffect(() => {
+        setFlags()
+    },[])
+
 
     const setState = useCallback(async () => {
         setMovie(await getSingleMovie(movieID))
     }, [movieID])
 
-    const { isInSeenlist, isInWatchlist } = useCheckMovie(movieID, userID)
 
 
     useEffect(() => {
         setState()
-
     }, [setState])
 
     const record = {
@@ -57,12 +67,10 @@ const Details = () => {
                     <p>{movie.Actors}</p>
                     <p>Boxoffice</p>
                     <p>IMDB</p>
-                    {!isInWatchlist ? <button onClick={() => addToList(record, userID, "watchlist")} onClick={() => console.log(isInWatchlist)}>WATCHLIST</button>
-                        : <button onClick={() => removeFromList(userID, "watchlist", movieID)}>REMOVE FROM WATCHLIST</button>}
-                    {!isInSeenlist ? <button onClick={() => addToList(record, userID, "seenlist")}>SEEN</button>
-                        : <button onClick={() => removeFromList(userID, "seenlist", movieID)}>REMOVE FROM SEENLIST</button>}
-
-
+                    {!isInWatchlist ? <button onClick={() => { addToList(record, userID, "watchlist"); setIsInWatchlist(true); }}>WATCHLIST</button> : null}
+                    {isInWatchlist ? <button onClick={() => { removeFromList(userID, "watchlist", movieID); setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
+                    {!isInSeenlist ? <button onClick={() => { addToList(record, userID, "seenlist"); setIsInSeenlist(true) }}>SEEN</button> : null}
+                    {isInSeenlist ? <button onClick={() => { removeFromList(userID, "seenlist", movieID); setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
 
                 </div>
             </div>
