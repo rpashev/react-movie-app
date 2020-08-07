@@ -25,7 +25,7 @@ const Details = () => {
 
     useEffect(() => {
         setFlags()
-    },[])
+    }, [])
 
 
     const setState = useCallback(async () => {
@@ -68,9 +68,9 @@ const Details = () => {
                     <p>Boxoffice</p>
                     <p>IMDB</p>
                     {!isInWatchlist ? <button onClick={() => { addToList(record, userID, "watchlist"); setIsInWatchlist(true); }}>WATCHLIST</button> : null}
-                    {isInWatchlist ? <button onClick={() => { removeFromList(userID, "watchlist", movieID); setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
+                    {isInWatchlist ? <button onClick={() => { window.confirm("Are you sure you wish to remove movie from watchlist?") && removeFromList(userID, "watchlist", movieID) && setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
                     {!isInSeenlist ? <button onClick={() => { addToList(record, userID, "seenlist"); setIsInSeenlist(true) }}>SEEN</button> : null}
-                    {isInSeenlist ? <button onClick={() => { removeFromList(userID, "seenlist", movieID); setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
+                    {isInSeenlist ? <button onClick={() => { window.confirm("Are you sure you wish to remove movie from already seen movies?") && removeFromList(userID, "seenlist", movieID) && setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
 
                 </div>
             </div>
