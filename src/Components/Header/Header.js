@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import userContext from '../../Context/user-context'
 import getNavigation from '../../utils/navigation-links'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from './header.module.css'
 
 
@@ -17,12 +17,12 @@ const Header = () => {
             {
                 links.map(el => {
                     return (
-                        <Link className={styles.link}
+                        <NavLink exact activeClassName={styles.active} className={styles.link}
                             key={el.title}
                             to={el.link}
                         >
                             {el.title}
-                        </Link>
+                        </NavLink>
                     )
                 })
             }
