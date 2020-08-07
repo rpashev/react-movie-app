@@ -1,5 +1,5 @@
 .register {
-    width: 400px;
+    width: 440px;
     display: flex;
     flex-flow: column;
     margin: 0 auto;
@@ -28,4 +28,13 @@
     display: block;
     width: 50%;
     text-align: left;
+}
+.error {
+    margin: 0;
+    width: 220px;
+    text-align: left;
+    background-color: #c21423;
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 12px;
 }

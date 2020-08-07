@@ -33,7 +33,7 @@ const Search = () => {
         if (isLoading === true && query !== '') {
             return <Loader />
         }
-        if(isLoading === false && query ===''){
+        if (isLoading === false && query === '') {
             return <img className={styles.img} src="./home.png" alt="img" />
         }
         if (filteredMovies) {
@@ -45,19 +45,19 @@ const Search = () => {
     }
     return (
         <Layout>
-        <div className={styles.container}>
-        <h1 className={styles.title}>Search for a movie or TV series here...</h1>
-            <div>
-                <input className={styles.query} onChange={e => setQuery(e.target.value)}></input>
+            <div className={styles.container}>
+                <h1 className={styles.title}>Search for a movie or TV series here...</h1>
+                <div>
+                    <input className={styles.query} onChange={e => setQuery(e.target.value)}></input>
 
+                </div>
+
+                <div className={styles.list}>
+                    {renderMovies()}
+
+                </div>
             </div>
 
-            <div className={styles.list}>
-                {renderMovies()}
-
-            </div>
-        </div>
-            
         </Layout >
 
     )
