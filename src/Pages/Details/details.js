@@ -5,7 +5,7 @@ import { getSingleMovie } from '../../utils/omdb-requests'
 import { useParams } from "react-router-dom"
 import userContext from "../../Context/user-context"
 import { addToList, removeFromList } from '../../utils/firebase-requests'
-
+import { useCheckMovie } from '../../CustomHooks/useCheckMovie'
 
 
 const Details = () => {
@@ -19,6 +19,9 @@ const Details = () => {
     const setState = useCallback(async () => {
         setMovie(await getSingleMovie(movieID))
     }, [movieID])
+
+    const { isInSeenlist, isInWatchlist } = useCheckMovie(movieID, userID)
+
 
     useEffect(() => {
         setState()
@@ -54,15 +57,17 @@ const Details = () => {
                     <p>{movie.Actors}</p>
                     <p>Boxoffice</p>
                     <p>IMDB</p>
-                    <button onClick={() => addToList(record, userID, "watchlist")}>WATCHLIST</button>
-                    <button onClick={() => addToList(record, userID, "seenlist")}>SEEN</button>
-                    <button onClick={() => removeFromList(userID, "watchlist", movieID)}>REMOVE FROM WATCHLIST</button>
-                    <button onClick={() => removeFromList(userID, "seenlist", movieID)}>REMOVE FROM SEENLIST</button>
+                    {!isInWatchlist ? <button onClick={() => addToList(record, userID, "watchlist")} onClick={() => console.log(isInWatchlist)}>WATCHLIST</button>
+                        : <button onClick={() => removeFromList(userID, "watchlist", movieID)}>REMOVE FROM WATCHLIST</button>}
+                    {!isInSeenlist ? <button onClick={() => addToList(record, userID, "seenlist")}>SEEN</button>
+                        : <button onClick={() => removeFromList(userID, "seenlist", movieID)}>REMOVE FROM SEENLIST</button>}
+
+
 
                 </div>
             </div>
 
-        </Layout>
+        </Layout >
 
     )
 }
