@@ -53,7 +53,7 @@ const Login = () => {
             <form className={styles.login}>
                 <div className={styles.formcontrol}>
                     <label htmlFor="email" >Email</label>
-                    <input className={styles.input} value={email} type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
+                    <input className={styles.input} value={email} type="email" onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
                     {emailError ? <p className={styles.error}>{emailError}</p> : null}
                 </div>
 

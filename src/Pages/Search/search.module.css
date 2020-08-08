@@ -20,9 +20,13 @@
     padding: 8px;
     font-size: 1.3rem;
 }
-.img {
+.imgdiv {
     margin: 0 auto;
+    margin-right: 500px;
     width: 620px;
     height: 500px;
     
+}
+.image{
+    width: 100%;
 }

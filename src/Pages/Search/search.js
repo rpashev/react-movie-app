@@ -34,7 +34,7 @@ const Search = () => {
             return <Loader />
         }
         if (isLoading === false && query === '') {
-            return <img className={styles.img} src="./home.png" alt="img" />
+            return <div className={styles.imgdiv}><img className={styles.image} src="./home.png" alt="img" /></div>
         }
         if (filteredMovies) {
             return filteredMovies.map(movie => {
