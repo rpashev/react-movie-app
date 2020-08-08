@@ -11,14 +11,16 @@ const MovieCard = (props) => {
     const { user } = context
     const userID = user.uid
     const [isInWatchlist, setIsInWatchlist] = useState()
+    const [isInSeenlist, setIsInSeenlist] = useState()
 
-    const setFlag = async () => {
+    const setFlags = async () => {
         let flags = await checkMovie(props.movieID, userID)
         setIsInWatchlist(flags.isInWatchList)
+        setIsInSeenlist(flags.isInSeenlist)
     }
 
     useEffect(() => {
-        setFlag()
+        setFlags()
     }, [])
 
     const record = {
@@ -35,9 +37,11 @@ const MovieCard = (props) => {
             </div>
 
             <Link to={`/details/${props.movieID}`}> <img alt="pic" className={styles.image} src={props.img} ></img></Link>
-           {!isInWatchlist ? <img title = "Add to watchlist" onClick={() => addToList(record, userID, "watchlist") && setIsInWatchlist(true)}  className={styles.add} src='./add.png' alt='pic' />
-        : <img title = "Movie is in watchlist!"  className={styles.add} src='./tick.png' alt='pic' />} 
+            {!isInWatchlist ? <img title="Add to watchlist" onClick={() => addToList(record, userID, "watchlist") && setIsInWatchlist(true)} className={styles.watchlistIcon} src='add4.png' alt='pic' />
+                : <img title="Movie is in watchlist!" className={styles.watchlistIcon} src='./inwatched.svg' alt='pic' />}
             <div className={styles.title}><p>{props.title}</p></div>
+            {!isInSeenlist ? <img title="Add to already watched list!" onClick={() => addToList(record, userID, "seenlist") && setIsInSeenlist(true)} className={styles.seenIcon} src='./addtowatched.png' alt='pic' />
+                : <img title="Movie is in already watched!" className={styles.seenIcon} src='./tick.png' alt='pic' />}
 
         </div>
     )

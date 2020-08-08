@@ -37,18 +37,34 @@
     height: 40px;
     color: #ffffff;
 }
-.add {
+.watchlistIcon {
     position: absolute;
     display: none;
     top: 0;
     left: 0;
-    width: 80px;
-    height: 80px;
+    width: 65px;
+    height: 65px;
     z-index: 1;
-    opacity: 80%;
+    opacity: 90%;
     cursor: pointer;
 }
 
-.card:hover .add {
+.card:hover .watchlistIcon {
     display: block;
+}
+
+.card:hover .seenIcon {
+    display: block;
+}
+
+.seenIcon {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 65px;
+    height: 65px;
+    z-index: 1;
+    opacity: 90%;
+    cursor: pointer;
 }
