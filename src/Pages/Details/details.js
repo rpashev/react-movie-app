@@ -43,34 +43,41 @@ const Details = () => {
         title: movie.Title,
         poster: movie.Poster
     }
-
+    let ratings
+    if (movie.Ratings) {
+        ratings = movie.Ratings.map(el => el.Value)
+    }
 
     return (
         <Layout>
             <div className={styles.details}>
-                <div className={styles.side}>
+                <div className={styles.leftside}>
                     <img src={movie.Poster} alt=""></img>
-                    <p>{movie.Genre}</p>
-                    <p>{movie.Runtime}</p>
-                    <p>{movie.Year}</p>
-                    <p>{movie.Country}</p>
+                    <p>Genre: {movie.Genre}</p>
+                    <p>Runtime: {movie.Runtime}</p>
+                    <p>Year: {movie.Year}</p>
+                    <p>Country: {movie.Country}</p>
 
                 </div>
 
-                <div className={styles.side}>
+                <div className={styles.rightside}>
                     <h1>{movie.Title}</h1>
-                    <div>Ratings</div>
-                    <p>PG</p>
+                    {ratings ? <div className={styles.ratings}>
+                        <p className={styles.rating}>IMDB: {ratings[0]}</p>
+                        <p className={styles.rating}>Rotten Tomatoes: {ratings[1]}</p>
+                        <p className={styles.rating}>Metacritic: {ratings[2]}</p>
+                    </div> : null}
                     <p>{movie.Plot}</p>
-                    <p>{movie.Director}</p>
-                    <p>Writers</p>
-                    <p>{movie.Actors}</p>
-                    <p>Boxoffice</p>
-                    <p>IMDB</p>
-                    {!isInWatchlist ? <button onClick={() => { addToList(record, userID, "watchlist"); setIsInWatchlist(true); }}>WATCHLIST</button> : null}
-                    {isInWatchlist ? <button onClick={() => { window.confirm("Are you sure you wish to remove movie from watchlist?") && removeFromList(userID, "watchlist", movieID) && setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
-                    {!isInSeenlist ? <button onClick={() => { addToList(record, userID, "seenlist"); setIsInSeenlist(true) }}>SEEN</button> : null}
-                    {isInSeenlist ? <button onClick={() => { window.confirm("Are you sure you wish to remove movie from already seen movies?") && removeFromList(userID, "seenlist", movieID) && setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
+                    <p>Director: {movie.Director}</p>
+                    <p>Writer: {movie.Writer}</p>
+                    <p>Stars: {movie.Actors}</p>
+                    <p>Boxoffice: {movie.BoxOffice}</p>
+                    <div className={styles.buttons}>
+                        {!isInWatchlist ? <button className={styles.addButtonWatch} onClick={() => { addToList(record, userID, "watchlist"); setIsInWatchlist(true); }}>ADD TO WATCHLIST</button> : null}
+                        {isInWatchlist ? <button className={styles.removeButton} onClick={() => { window.confirm("Are you sure you wish to remove movie from watchlist?") && removeFromList(userID, "watchlist", movieID) && setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
+                        {!isInSeenlist ? <button className={styles.addButtonSeen} onClick={() => { addToList(record, userID, "seenlist"); setIsInSeenlist(true) }}>ADD TO ALREADY WATCHED</button> : null}
+                        {isInSeenlist ? <button className={styles.removeButton} onClick={() => { window.confirm("Are you sure you wish to remove movie from already seen movies?") && removeFromList(userID, "seenlist", movieID) && setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
+                    </div>
 
                 </div>
             </div>

@@ -31,11 +31,7 @@ const MovieCard = (props) => {
 
     return (
         <div className={styles.card}>
-            <div className={styles.buttons}>
-
-
-            </div>
-
+            
             <Link to={`/details/${props.movieID}`}> <img alt="pic" className={styles.image} src={props.img} ></img></Link>
             {!isInWatchlist ? <img title="Add to watchlist" onClick={() => addToList(record, userID, "watchlist") && setIsInWatchlist(true)} className={styles.watchlistIcon} src='add4.png' alt='pic' />
                 : <img title="Movie is in watchlist!" className={styles.watchlistIcon} src='./inwatched.svg' alt='pic' />}
@@ -45,10 +41,8 @@ const MovieCard = (props) => {
 
         </div>
     )
-
 }
-// <button onClick={() => addToList(record, userID, "watchlist")}>ADD TO WATCHLIST</button>
-//                 <button onClick={() => addToList(record, userID, "seenlist")}>MARK AS WATCHED</button>
+
 
 
 export default MovieCard
