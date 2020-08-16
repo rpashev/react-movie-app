@@ -1,11 +1,12 @@
-.register {
-    width: 440px;
-    display: flex;
-    flex-flow: column;
-    margin: 0 auto;
-    margin-top: 100px;
-    justify-content: center;
+
+.registerForm {
+    width: 30%;
     color: #ffffff;
+    margin-left: 42%;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    
 }
 
 .formcontrol {
@@ -13,6 +14,9 @@
     margin: 0 auto;
     padding: 1%;
     border: none;
+    display: flex;
+    flex-flow: column;
+
 }
 
 .input {
@@ -29,6 +33,7 @@
     width: 50%;
     text-align: left;
 }
+
 .error {
     margin: 0;
     width: 220px;
@@ -38,6 +43,7 @@
     border-radius: 3px;
     font-size: 12px;
 }
+
 .button {
     border: none;
     font: inherit;
@@ -50,4 +56,12 @@
     height: 2rem;
     cursor: pointer;
     color: white;
+}
+
+.title {
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+    color: #ffffff;
+    text-align: center;
+    
 }

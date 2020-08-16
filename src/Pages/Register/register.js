@@ -81,7 +81,9 @@ const Register = () => {
 
   return (
     <Layout>
-      <form className={styles.register}>
+
+      <h1 className={styles.title}>REGISTER</h1>
+      <form className={styles.registerForm}>
         <div className={styles.formcontrol}>
           <label htmlFor="email" >Email</label>
           <input className={styles.input} type="email" value={email} onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
@@ -105,7 +107,7 @@ const Register = () => {
         <div className={styles.formcontrol}>
           <button className={styles.button} type="button" onClick={submitHandler}>Register</button>
         </div>
-      </form>;
+      </form>
     </Layout>
 
   )

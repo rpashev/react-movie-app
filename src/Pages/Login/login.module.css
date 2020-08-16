@@ -1,18 +1,22 @@
-.login {
-    width: 440px;
+
+.loginForm {
+    width: 30%;
+    color: #ffffff;
+    margin-left: 42%;
     display: flex;
-    flex-flow: column;
-    margin: 0 auto;
-    margin-top: 100px;
     justify-content: center;
-    color: #ffffff
+    flex-flow: column;
+    
 }
 
 .formcontrol {
     width: 100%;
-    margin: 0.5rem auto;
+    margin: 0 auto;
     padding: 1%;
     border: none;
+    display: flex;
+    flex-flow: column;
+
 }
 
 .input {
@@ -52,4 +56,11 @@
     height: 2rem;
     cursor: pointer;
     color: white;
+}
+
+.title {
+    margin-bottom: 3rem;
+    margin-top: 4rem;
+    color: #ffffff;
+    text-align: center;
 }

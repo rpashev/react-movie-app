@@ -50,7 +50,8 @@ const Login = () => {
 
     return (
         <Layout>
-            <form className={styles.login}>
+            <h1 className={styles.title}>LOGIN</h1>
+            <form className={styles.loginForm}>
                 <div className={styles.formcontrol}>
                     <label htmlFor="email" >Email</label>
                     <input className={styles.input} value={email} type="email" onChange={(e) => setEmail(e.target.value)} onBlur={validateEmail} />
