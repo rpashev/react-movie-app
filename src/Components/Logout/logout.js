@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useHistory } from "react-router-dom"
-import logout from '../../utils/logout'
+import { logout } from '../../Services/firebase-requests'
 
 
 const Logout = () => {
     let history = useHistory()
-    
+
     useEffect(() => {
         logout()
         history.push("/login");

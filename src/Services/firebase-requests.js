@@ -47,3 +47,12 @@ export const removeFromList = async (userID, listname, movieID) => {
     }
 
 }
+
+export const logout = async () => {
+    try {
+        await firebase.auth().signOut();
+
+    } catch (err) {
+        alert(err);
+    }
+}

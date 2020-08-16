@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react"
 import Layout from "../../Components/Layout/Layout"
-import { getUserLists } from '../../utils/firebase-requests'
+import { getUserLists } from '../../Services/firebase-requests'
 import userContext from "../../Context/user-context"
 import MovieCard from "../../Components/SingleMovie/movie-card"
 import Loader from "../../Components/Loader/loader"

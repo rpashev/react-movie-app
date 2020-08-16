@@ -39,3 +39,17 @@
     border-radius: 3px;
     font-size: 12px;
 }
+
+.button {
+    border: none;
+    font: inherit;
+    text-align: center;
+    font-size: 1rem;
+    padding: 8px;
+    border-radius: 10%;
+    background: #385502;
+    width: 20%;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+}

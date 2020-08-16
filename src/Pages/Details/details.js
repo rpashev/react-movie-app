@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback, useContext } from "react"
 import Layout from "../../Components/Layout/Layout"
 import styles from './details.module.css'
-import { getSingleMovie } from '../../utils/omdb-requests'
+import { getSingleMovie } from '../../Services/omdb-requests'
 import { useParams, Link } from "react-router-dom"
 import userContext from "../../Context/user-context"
-import { addToList, removeFromList } from '../../utils/firebase-requests'
+import { addToList, removeFromList } from '../../Services/firebase-requests'
 import { checkMovie } from '../../utils/checkLists'
 
 const Details = () => {
@@ -84,7 +84,7 @@ const Details = () => {
                         {!isInWatchlist ? <button className={styles.addButtonWatch} onClick={() => { addToList(record, userID, "watchlist") && setIsInWatchlist(true) }}>ADD TO WATCHLIST</button> : null}
                         {isInWatchlist ? <button className={styles.removeButton} onClick={() => { window.confirm("Are you sure you wish to remove movie from watchlist?") && removeFromList(userID, "watchlist", movieID) && setIsInWatchlist(false) }} >REMOVE FROM WATCHLIST</button> : null}
                         {!isInSeenlist ? <button className={styles.addButtonSeen} onClick={() => { addToList(record, userID, "seenlist") && setIsInSeenlist(true) }}>ADD TO ALREADY WATCHED</button> : null}
-                        {isInSeenlist ? <button className={styles.removeButton} onClick={() => { window.confirm("Are you sure you wish to remove movie from already seen movies?") && removeFromList(userID, "seenlist", movieID) && setIsInSeenlist(false) }}>REMOVE FROM SEENLIST</button> : null}
+                        {isInSeenlist ? <button className={styles.removeButton} onClick={() => { window.confirm("Are you sure you wish to remove movie from already seen movies?") && removeFromList(userID, "seenlist", movieID) && setIsInSeenlist(false) }}>REMOVE FROM WATCHED</button> : null}
                     </div>
 
                 </div>

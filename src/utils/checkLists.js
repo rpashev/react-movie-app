@@ -1,4 +1,4 @@
-import { getUserLists } from '../utils/firebase-requests'
+import { getUserLists } from '../Services/firebase-requests'
 
 export const checkMovie = async (movieID, userID) => {
     let isInWatchList = false

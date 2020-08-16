@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import styles from './movie-card.module.css'
 import { Link } from 'react-router-dom'
-import { addToList } from '../../utils/firebase-requests'
+import { addToList } from '../../Services/firebase-requests'
 import userContext from '../../Context/user-context'
 import { checkMovie } from '../../utils/checkLists'
 

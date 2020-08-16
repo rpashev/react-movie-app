@@ -103,7 +103,7 @@ const Register = () => {
         </div>
 
         <div className={styles.formcontrol}>
-          <button type="button" onClick={submitHandler}>Register</button>
+          <button className={styles.button} type="button" onClick={submitHandler}>Register</button>
         </div>
       </form>;
     </Layout>

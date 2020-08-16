@@ -64,7 +64,7 @@ const Login = () => {
                 </div>
 
                 <div className={styles.formcontrol}>
-                    <button type="button" onClick={submitHandler}>Login</button>
+                    <button className={styles.button} type="button" onClick={submitHandler}>Login</button>
                 </div>
             </form>;
         </Layout>

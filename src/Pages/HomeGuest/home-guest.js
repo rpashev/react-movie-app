@@ -12,7 +12,7 @@ const HomeGuest = () => {
                     <p>Already have an account? </p>
                     <Link className={styles.link} to='/login'><h3>SIGN IN here</h3></Link>
                 </div>
-                <img className={styles.image} alt="pic" src='./guest.png' />
+                <img className={styles.image} alt="pic" src='./superheroes.png' />
             </div>
 
         </Layout>

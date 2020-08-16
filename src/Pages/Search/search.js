@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react"
 import Layout from "../../Components/Layout/Layout"
 import MovieCard from "../../Components/SingleMovie/movie-card"
 import styles from './search.module.css'
-import { getFilteredMovies } from '../../utils/omdb-requests'
+import { getFilteredMovies } from '../../Services/omdb-requests'
 import Loader from "../../Components/Loader/loader"
 
 const Search = () => {
