@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useContext } from "react"
 import Layout from "../../Components/Layout/Layout"
 import styles from './details.module.css'
 import { getSingleMovie } from '../../Services/omdb-requests'
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import userContext from "../../Context/user-context"
 import { addToList, removeFromList } from '../../Services/firebase-requests'
 import { checkMovie } from '../../utils/checkLists'
@@ -48,6 +48,7 @@ const Details = () => {
         title: movie.Title,
         poster: movie.Poster
     }
+    
     let ratings
     if (movie.Ratings) {
         ratings = movie.Ratings.map(el => el.Value)

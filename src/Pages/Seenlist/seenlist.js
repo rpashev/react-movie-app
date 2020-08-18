@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from "react"
 import Layout from "../../Components/Layout/Layout"
 import { getUserLists } from '../../Services/firebase-requests'
 import userContext from "../../Context/user-context"
-import MovieCard from "../../Components/SingleMovie/movie-card"
-import Loader from "../../Components/Loader/loader"
 import styles from './seenlist.module.css'
+import { renderMovies } from '../../utils/renderMovies'
+
 
 const Seenlist = () => {
     const context = useContext(userContext)
@@ -24,26 +24,10 @@ const Seenlist = () => {
 
     }, [])
 
-    const renderMovies = () => {
-        if(isLoading === true){
-            return <Loader/>
-        }
-        if (seenlist.length > 0) {
-            return seenlist.map(movie => {
-                
-                return <MovieCard key={movie.movieID} title={movie.title} img={movie.poster} movieID={movie.movieID} />
-               
-            })
-        } else {
-            return <div>No movies in this list yet!</div>
-        }
-
-    }
-
     return (
         <Layout>
             <div className={styles.list}>
-                {renderMovies()}
+                {renderMovies(isLoading, seenlist)}
             </div>
         </Layout>
 

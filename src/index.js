@@ -10,9 +10,6 @@ ReactDOM.render(
     <App>
       <Navigation />
     </App>
-
-
-
   </React.StrictMode>,
   document.getElementById('root')
 );
