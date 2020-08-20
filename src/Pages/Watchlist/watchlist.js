@@ -26,7 +26,9 @@ const Watchlist = () => {
 
     return (
         <Layout>
+            <h1 className={styles.title}>Watchlist</h1>
             <div className={styles.list}>
+
                 {renderMovies(isLoading, watchlist)}
             </div>
         </Layout>

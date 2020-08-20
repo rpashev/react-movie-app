@@ -26,6 +26,7 @@ const Seenlist = () => {
 
     return (
         <Layout>
+            <h1 className={styles.title}>Already watched</h1>
             <div className={styles.list}>
                 {renderMovies(isLoading, seenlist)}
             </div>
