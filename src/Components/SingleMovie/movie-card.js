@@ -29,10 +29,14 @@ const MovieCard = (props) => {
         poster: props.img
     }
 
+    let imgLink = props.img
+    if (imgLink === 'N/A') {
+        imgLink = 'https://www.prokerala.com/movies/assets/img/no-poster-available.jpg'
+    }
     return (
         <div className={styles.card}>
-            
-            <Link to={`/details/${props.movieID}`}> <img alt="pic" className={styles.image} src={props.img} ></img></Link>
+
+            <Link to={`/details/${props.movieID}`}> <img alt="No poster available" className={styles.image} src={imgLink} ></img></Link>
             {!isInWatchlist ? <img title="Add to watchlist" onClick={() => addToList(record, userID, "watchlist") && setIsInWatchlist(true)} className={styles.watchlistIcon} src='add4.png' alt='pic' />
                 : <img title="Movie is in watchlist!" className={styles.watchlistIcon} src='./inwatched.svg' alt='pic' />}
             <div className={styles.title}><p>{props.title}</p></div>
