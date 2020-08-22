@@ -1,6 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-movie-app
+An app helping the user in finding and tracking what movies he wishes to watch and what has the user already watched.
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Firebase Firestore is used for backend. 
+OMDB API is used for a movie database. http://www.omdbapi.com/
+
+
+## Functionality
+
+### General functionality
+- Home page - user is prompted to sign in or register.
+- Register page
+- Login page
+
+### User functionality
+- Searching for movies and TV series by name
+- Adding movies to "Watchlist"
+- Adding movies to "Already watched" list
+- Viewing a details page for each movie
+- Link to IMDB for each movie 
+- Removing movies from "Watchlist"
+- Removing movies from "Aready watched"
+- Viewing "Watchlist"
+- Viewing "Already watched" list
+- Logout
+
+
+## Project setup anda available scripts
 
 In the project directory, you can run:
 
