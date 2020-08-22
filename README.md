@@ -26,7 +26,7 @@ OMDB API is used for a movie database. http://www.omdbapi.com/
 - Logout
 
 
-## Project setup anda available scripts
+## Project setup and available scripts
 
 In the project directory, you can run:
 
