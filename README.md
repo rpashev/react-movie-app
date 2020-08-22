@@ -3,7 +3,7 @@ An app helping the user in finding and tracking what movies he wishes to watch a
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Firebase Firestore is used for backend. 
-OMDB API is used for a movie database. http://www.omdbapi.com/
+OMDb API is used for a movie database. http://www.omdbapi.com/
 
 
 ## Functionality
