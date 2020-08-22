@@ -1,4 +1,4 @@
-# react-movie-app
+# Movie Catalogue App with React
 An app helping the user in finding and tracking what movies he wishes to watch and what has the user already watched.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
