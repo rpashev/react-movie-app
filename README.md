@@ -1,5 +1,6 @@
 # Movie Catalogue App with React
-An app helping the user in finding and tracking what movies he wishes to watch and what has the user already watched.
+An app helping the user in finding and tracking what movies he wishes to watch and what has the user already watched.  
+You can find an updated version of this app **[HERE](https://github.com/rpashev/react-movie-app-mern)**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Firebase Firestore is used for backend. 
